@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let post = {
+            title : "Ciao",
+            body: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim asperiores, 
+            ex placeat quos doloribus dignissimos veritatis est quisquam aliquid reiciendis nesciunt, 
+            porro mollitia unde cupiditate deleniti ipsam saepe nam beatae.`,
+            publishDate: "20230417",
+            authorId: 2,
+        };
+        // let body = JSON.stringify(post);
+
+        // fetch("/authors", {
+        //     method: "POST",
+        //     headers: {
+        //         "content-type": "application/json"
+        //     },
+        //     body: post,
+        // }).then((res) => {
+        //     console.log(res.status);
+        // });
+        //     console.log("print 1");
+
+        fetch('/authors')
+        .then((res) => {
+            return res.json();
+        }).then((authorsLists) => {
+            console.log(authorsLists);
+        });
+
+    </script>
+</body>
+</html>
